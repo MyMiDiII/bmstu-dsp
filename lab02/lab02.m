@@ -99,8 +99,10 @@ function [y] = dft(x)
   endfor
 end
 
-
-%u_rect_no_twins = zeros(size(x));
-%for i = 1:length(x)
-%  u_rect_no_twins(i) = u_rect(i) * (-1).^x(i);
-%endfor
+% 19
+% u_rect_no_twins = zeros(size(x));
+% for i = 1:length(x)
+%   u_rect_no_twins(i) = u_rect(i) * (-1).^x(i);
+% endfor
+% 25
+% dft_v_rect = dft(u_rect_no_twins);

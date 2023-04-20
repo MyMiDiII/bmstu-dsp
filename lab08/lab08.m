@@ -40,23 +40,23 @@ end
 
 function y = med(u, i)
   if (i == 1)
-    m = [u(i), u(i+1)]
+    m = [u(i), u(i+1)];
   elseif (i == length(u))
-    m = [u(i), u(i - 1)]
+    m = [u(i), u(i - 1)];
   else
-    m = [u(i - 1), u(i), u(i + 1)]
+    m = [u(i - 1), u(i), u(i + 1)];
   endif
-  m = sort(m)
-  y = m(ceil((length(m) + 1) / 2))
+  m = sort(m);
+  y = m(ceil((length(m) + 1) / 2));
 end
 
 function y = mean(u, i)
-  step = 3
+  step = 3;
   i_from = i - step;
   i_to = i + step;
 
-  s = 0
-  num = 0
+  s = 0;
+  num = 0;
   for k = i_from:1:i_to
     if (k > 0 && k <= length(u))
       s += u(k);
@@ -95,10 +95,6 @@ function graph(rows, columns, num, x, us, lbls, title_string)
   hold on;
   grid on;
   for signal = us'
-    disp("sig")
-    disp(length(signal))
-    disp("x")
-    disp(length(x))
     plot(x, signal);
   endfor
   legend(lbls);
